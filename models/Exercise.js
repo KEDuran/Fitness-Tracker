@@ -4,22 +4,35 @@ const Schema = mongoose.Schema;
 
 const ExerciseSchema = new Schema({
 	// creates type attribute
-	type: String,
-
+	type: {
+		type: String,
+		unique: false,
+	},
 	// creates name attribute
-	name: String,
-
+	name: {
+		type: String,
+		unique: false,
+	},
 	// creates duration attribute
-	duration: Number,
-
+	duration: {
+		type: Number,
+		unique: false,
+	},
 	// creates weight attribute
-	weight: Number,
-
+	weight: {
+		type: Number,
+		unique: false,
+	},
 	// creates reps attribute
-	reps: Number,
-
+	reps: {
+		type: Number,
+		unique: false,
+	},
 	// creates sets attribute
-	sets: Number,
+	sets: {
+		type: Number,
+		unique: false,
+	},
 });
 
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
