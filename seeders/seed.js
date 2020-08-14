@@ -135,7 +135,16 @@ let workoutSeed = [
 	},
 ];
 
-db.Workout.deleteMany({})
+db.Exercise.deleteMany({});
+db.Workout.deleteMany({});
+
+db.Exercise.create(workoutSeed[0].exercises[0]).then(({ _id }) => {
+	db.Workout.create({ day: workoutSeed[0].day, exercises: [_id] });
+});
+
+process.exit(0);
+
+/*db.Workout.deleteMany({})
 	.then(() => db.Workout.collection.insertMany(workoutSeed))
 	.then((data) => {
 		console.log(data.result.n + " records inserted!");
@@ -144,4 +153,4 @@ db.Workout.deleteMany({})
 	.catch((err) => {
 		console.error(err);
 		process.exit(1);
-	});
+	});*/
