@@ -10,11 +10,18 @@ const db = require("./models");
 
 const app = express();
 
+app.use(logger("dev"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // route that calls the the home page
 app.use(express.static("public"));
+
+// connects to the workout database
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+	useNewUrlParser: true,
+});
 
 // route for the exercise page
 app.get("/exercise", (req, res) => {
