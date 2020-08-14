@@ -33,7 +33,8 @@ app.get("/stats", (req, res) => {
 });
 // Route that call workout data from API
 app.get("/api/workouts", (req, res) => {
-	db.Workout.find({})
+    db.Workout.find({})
+        .populate("exercises")
 		.then((dbWorkout) => {
 			res.json(dbWorkout);
 		})
