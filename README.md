@@ -33,6 +33,8 @@ Here are the links to the MVP items required for this assignment. Ihese links wi
 
 - Link to deployed application - [https://workout-tracker-ked.herokuapp.com/](https://workout-tracker-ked.herokuapp.com/)
 
+- Link for functionality demo - [Workout Tracker Demo Recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
+
 ---
 
 ## Assignment Scope
