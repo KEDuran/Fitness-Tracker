@@ -43,6 +43,25 @@ app.get("/api/workouts", (req, res) => {
 		});
 });
 
+// Route to update workout data - referenced activity 14
+app.put("/api/workouts/:id", (req, res) => {
+	var workoutID = req.params.id;
+	db.Exercise.create(req.body)
+		.then(({ _id }) =>
+			db.Workout.findOneAndUpdate(
+				{ _id: workoutID },
+				{ $push: { exercises: _id } },
+				{ new: true }
+			)
+		)
+		.then((dbWorkout) => {
+			res.json(dbWorkout);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
+
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);
 });
