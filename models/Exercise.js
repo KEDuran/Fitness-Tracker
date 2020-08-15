@@ -12,6 +12,9 @@ const ExerciseSchema = new Schema({
 	// creates duration attribute
 	duration: Number,
 
+	// creates distance attribute
+	distance: Number,
+
 	// creates weight attribute
 	weight: Number,
 
