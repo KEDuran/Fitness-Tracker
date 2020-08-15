@@ -43,17 +43,38 @@ function populateChart(data) {
 	let pie = document.querySelector("#canvas3").getContext("2d");
 	let pie2 = document.querySelector("#canvas4").getContext("2d");
 
+	let dayOfWeek = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday",
+	];
+
+	let dataDates = [];
+
+	for (var i = 1; i <= 10; i++) {
+		let d = new Date();
+		d.setDate(new Date().getDate() - i);
+		dataDates.push(d);
+	}
+
 	let lineChart = new Chart(line, {
 		type: "line",
 		data: {
 			labels: [
-				"Sunday",
-				"Monday",
-				"Tuesday",
-				"Wednesday",
-				"Thursday",
-				"Friday",
-				"Saturday",
+				dayOfWeek[dataDates[9].getDay()],
+				dayOfWeek[dataDates[8].getDay()],
+				dayOfWeek[dataDates[7].getDay()],
+				dayOfWeek[dataDates[6].getDay()],
+				dayOfWeek[dataDates[5].getDay()],
+				dayOfWeek[dataDates[4].getDay()],
+				dayOfWeek[dataDates[3].getDay()],
+				dayOfWeek[dataDates[2].getDay()],
+				dayOfWeek[dataDates[1].getDay()],
+				dayOfWeek[dataDates[0].getDay()],
 			],
 			datasets: [
 				{
@@ -95,13 +116,16 @@ function populateChart(data) {
 		type: "bar",
 		data: {
 			labels: [
-				"Sunday",
-				"Monday",
-				"Tuesday",
-				"Wednesday",
-				"Thursday",
-				"Friday",
-				"Saturday",
+				dayOfWeek[dataDates[9].getDay()],
+				dayOfWeek[dataDates[8].getDay()],
+				dayOfWeek[dataDates[7].getDay()],
+				dayOfWeek[dataDates[6].getDay()],
+				dayOfWeek[dataDates[5].getDay()],
+				dayOfWeek[dataDates[4].getDay()],
+				dayOfWeek[dataDates[3].getDay()],
+				dayOfWeek[dataDates[2].getDay()],
+				dayOfWeek[dataDates[1].getDay()],
+				dayOfWeek[dataDates[0].getDay()],
 			],
 			datasets: [
 				{
