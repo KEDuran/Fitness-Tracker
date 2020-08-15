@@ -130,6 +130,7 @@ function populateChart(data) {
 						"rgba(67, 170, 139, 0.2)",
 						"rgba(255, 144, 179, 0.2)",
 						"rgba(117, 117, 117, 0.2)",
+						"rgba(192, 133, 82, 0.2)",
 					],
 					borderColor: [
 						"rgba(255, 99, 132, 1)",
@@ -141,7 +142,8 @@ function populateChart(data) {
 						"rgba(39, 125, 161, 1)",
 						"rgba(67, 170, 139, 1)",
 						"rgba(255, 144, 179, 1)",
-						"rgba(117, 117, 117, 1",
+						"rgba(117, 117, 117, 1)",
+						"rgba(192, 133, 82, 1)",
 					],
 					borderWidth: 1,
 				},
