@@ -73,6 +73,9 @@ app.post("/api/workouts", (req, res) => {
 		});
 });
 
+// Route to populate workout dashboard
+app.get("/api/workouts/range", (req, res) => {});
+
 // Listens for server port
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);
