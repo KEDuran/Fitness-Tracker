@@ -128,20 +128,41 @@ let workoutSeed = [
 			{
 				type: "resistance",
 				name: "Bench",
-				duration: 30,
-				distance: 2,
+				duration: 20,
+				weight: 300,
+				reps: 10,
+				sets: 4,
 			},
 		],
 	},
 ];
 
-db.Workout.deleteMany({})
-	.then(() => db.Workout.collection.insertMany(workoutSeed))
-	.then((data) => {
-		console.log(data.result.n + " records inserted!");
+var workoutCountIndex = 0;
+
+function exitProcess() {
+	workoutCountIndex += 1;
+
+	if (workoutCountIndex === workoutSeed.length) {
 		process.exit(0);
-	})
-	.catch((err) => {
-		console.error(err);
-		process.exit(1);
+	}
+}
+
+function createWorkout(index) {
+	db.Exercise.create(workoutSeed[index].exercises[0]).then(({ _id }) => {
+		console.log("index: " + index);
+		db.Workout.create({
+			day: workoutSeed[index].day,
+			exercises: [_id],
+		}).then(() => {
+			exitProcess();
+		});
 	});
+}
+
+db.Exercise.deleteMany({}).then(() => {
+	db.Workout.deleteMany({}).then(() => {
+		for (var i = 0; i < workoutSeed.length; i++) {
+			createWorkout(i);
+		}
+	});
+});

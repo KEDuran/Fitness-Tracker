@@ -31,6 +31,17 @@ app.get("/exercise", (req, res) => {
 app.get("/stats", (req, res) => {
 	res.sendFile(path.join(__dirname, "./public/stats.html"));
 });
+// Route that call workout data from API
+app.get("/api/workouts", (req, res) => {
+	db.Workout.find({}, null, { sort: { day: 1 } })
+		.populate("exercises")
+		.then((dbWorkout) => {
+			res.json(dbWorkout);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);
