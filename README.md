@@ -14,6 +14,13 @@ _Please note that since the main focus for this assignment is to practice using 
 
 ## Table of Contents
 
+Please use the links in the table of contents provided below to navigate through this project's ReadMe.
+
+- [Links for Submission Items](#links-for-submission-items)
+- [Assignment Scope](#assignment-scope)
+- [Installation and Testing](#installation-and-testing)
+- [Final Output](#final-output)
+
 ---
 
 ## Links for Submission Items
