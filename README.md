@@ -29,11 +29,11 @@ Please use the links in the table of contents provided below to navigate through
 
 Here are the links to the MVP items required for this assignment. Ihese links will also be submitted in the Boot Camp Spot portal.
 
-- Link to GitHub Repo - [https://github.com/KEDuran/Workout-Tracker](https://github.com/KEDuran/Workout-Tracker)
+- Link to GitHub Repo - [Workout Tracker Repo on GitHub](https://github.com/KEDuran/Workout-Tracker)
 
-- Link to deployed application - [https://workout-tracker-ked.herokuapp.com/](https://workout-tracker-ked.herokuapp.com/)
+- Link to deployed application - [Workout Tracker App deployed on Heroku](https://workout-tracker-ked.herokuapp.com/)
 
-- Link for functionality demo - [Workout Tracker Demo Recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
+- Link for functionality demo - [Workout Tracker App demo recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
 
 ---
 
