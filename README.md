@@ -36,7 +36,8 @@ If the exercise is a cardio exercise, I should be able to track my distance trav
 Here are the acceptance criteria that was provided in the intructional ReadMe file for this assignment.
 
 ```
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+When the user loads the page, they should be given the
+option to create a new workout, or continue with their last workout.
 
 The user should be able to:
 
