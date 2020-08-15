@@ -10,7 +10,7 @@
 
 The goal for this assignment is to create a full stack workout tracker web application that will allow a user to keep track of their workout regime by using MongoDB and Mongoose schema for database creation/management and Express for handling routes.
 
-_Please note that since the main focus for this assignment is to practice using MongoDB and Mongoose for database management, all front-end code was provided by our instructor._
+Since the main focus for this assignment is to practice using MongoDB and Mongoose for database management, the front-end code was provided as resource material in the homework assignment's directory. **_However_**, in order for the dashboard to accurately (and dynamically) populate workout data, I had to make significant modification to the front-end code that was provided.
 
 ---
 
