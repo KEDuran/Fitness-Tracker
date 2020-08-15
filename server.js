@@ -44,7 +44,7 @@ app.get("/api/workouts", (req, res) => {
 });
 
 // Route to update workout data
-app.put("/api/workouts/:id", ({ body }, res) => {
+app.patch("/api/workouts/:id", ({ body }, res) => {
 	db.Workout.create(body)
 		.then(({ _id }) =>
 			db.Workout.findOneAndUpdate(
