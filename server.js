@@ -43,7 +43,7 @@ app.get("/api/workouts", (req, res) => {
 		});
 });
 
-// Route to update workout data
+// Route to update workout data - referenced activity 14
 app.patch("/api/workouts/:id", ({ body }, res) => {
 	db.Workout.create(body)
 		.then(({ _id }) =>
