@@ -12,6 +12,8 @@ The goal for this assignment is to create a full stack workout tracker web appli
 
 _Please note that since the main focus for this assignment is to practice using MongoDB and Mongoose for database management, all front-end code was provided by our instructor._
 
+---
+
 ## Table of Contents
 
 Please use the links in the table of contents provided below to navigate through this project's ReadMe.
