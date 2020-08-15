@@ -55,27 +55,26 @@ function populateChart(data) {
 
 	let dataDates = [];
 
-	for (var i = 1; i <= 10; i++) {
-		let d = new Date();
-		d.setDate(new Date().getDate() - i);
-		dataDates.push(d);
+	if (durations.length > 10) {
+		for (var i = 0; i < durations.length; i++) {
+			let d = new Date();
+			d.setDate(new Date().getDate() - i);
+			dataDates.push(dayOfWeek[d.getDay()]);
+		}
+	} else {
+		for (var i = 1; i <= durations.length; i++) {
+			let d = new Date();
+			d.setDate(new Date().getDate() - i);
+			dataDates.push(dayOfWeek[d.getDay()]);
+		}
 	}
+
+	dataDates.reverse();
 
 	let lineChart = new Chart(line, {
 		type: "line",
 		data: {
-			labels: [
-				dayOfWeek[dataDates[9].getDay()],
-				dayOfWeek[dataDates[8].getDay()],
-				dayOfWeek[dataDates[7].getDay()],
-				dayOfWeek[dataDates[6].getDay()],
-				dayOfWeek[dataDates[5].getDay()],
-				dayOfWeek[dataDates[4].getDay()],
-				dayOfWeek[dataDates[3].getDay()],
-				dayOfWeek[dataDates[2].getDay()],
-				dayOfWeek[dataDates[1].getDay()],
-				dayOfWeek[dataDates[0].getDay()],
-			],
+			labels: dataDates,
 			datasets: [
 				{
 					label: "Workout Duration In Minutes",
@@ -115,18 +114,7 @@ function populateChart(data) {
 	let barChart = new Chart(bar, {
 		type: "bar",
 		data: {
-			labels: [
-				dayOfWeek[dataDates[9].getDay()],
-				dayOfWeek[dataDates[8].getDay()],
-				dayOfWeek[dataDates[7].getDay()],
-				dayOfWeek[dataDates[6].getDay()],
-				dayOfWeek[dataDates[5].getDay()],
-				dayOfWeek[dataDates[4].getDay()],
-				dayOfWeek[dataDates[3].getDay()],
-				dayOfWeek[dataDates[2].getDay()],
-				dayOfWeek[dataDates[1].getDay()],
-				dayOfWeek[dataDates[0].getDay()],
-			],
+			labels: dataDates,
 			datasets: [
 				{
 					label: "Pounds",
@@ -237,7 +225,9 @@ function calculateTotalWeight(data) {
 	data.forEach((workout) => {
 		let totalWeight = 0;
 		workout.exercises.forEach((exercise) => {
-			totalWeight += exercise.weight;
+			if (exercise.weight) {
+				totalWeight += exercise.weight;
+			}
 		});
 		total.push(totalWeight);
 	});
