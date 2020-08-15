@@ -43,6 +43,9 @@ app.get("/api/workouts", (req, res) => {
 		});
 });
 
+// Route to update workout data
+app.put("/api/workouts/:id", (req, res) => {});
+
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);
 });
