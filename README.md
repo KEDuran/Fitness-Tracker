@@ -69,7 +69,15 @@ The user should be able to:
 
 ### Required Technology
 
-### Installation Tips
+In order to success launch this web application, you will need to have the following installed in your local working environment:
+
+- **Node.js** - Make sure Node.js is installed in your machine. If Node.js is not installed on your machine, [click here](https://nodejs.org/en/) to download the application.
+- **MongoDB** - Install MongoDB to enable your local environment to access the database structure used to store the back-end data for this application. [Click here](https://www.mongodb.com/try/download/community) to download MongoDB.
+- **Robo 3T** - Robo 3T is an application that gives users to use an easy graphic user interface (GUI) to view and query data in a MongoDB database. [Click here](https://robomongo.org/download) to download Robo 3T.
+  - Do not install STUDIO 3T. It is not needed for this repo.
+- **Postman** - Postman allow users to query the API endpoints developed for this web application. [Click here](https://www.postman.com/) for additional instructions on how to download and use this application.
+
+### Installation Instructions
 
 ---
 
