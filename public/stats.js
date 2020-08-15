@@ -33,8 +33,10 @@ function generatePalette() {
 	return arr;
 }
 function populateChart(data) {
-	let durations = duration(data);
-	let pounds = calculateTotalWeight(data);
+	let totalD = totalDuration(data);
+	let indivD = individualDurations(data);
+	let totalW = calculateTotalWeight(data);
+	let indivW = calculateIndivWeight(data);
 	let workouts = workoutNames(data);
 	const colors = generatePalette();
 
@@ -55,14 +57,14 @@ function populateChart(data) {
 
 	let dataDates = [];
 
-	if (durations.length > 10) {
-		for (var i = 0; i < durations.length; i++) {
+	if (totalD.length > 10) {
+		for (var i = 0; i < totalD.length; i++) {
 			let d = new Date();
 			d.setDate(new Date().getDate() - i);
 			dataDates.push(dayOfWeek[d.getDay()]);
 		}
 	} else {
-		for (var i = 1; i <= durations.length; i++) {
+		for (var i = 1; i <= totalD.length; i++) {
 			let d = new Date();
 			d.setDate(new Date().getDate() - i);
 			dataDates.push(dayOfWeek[d.getDay()]);
@@ -80,7 +82,7 @@ function populateChart(data) {
 					label: "Workout Duration In Minutes",
 					backgroundColor: "red",
 					borderColor: "red",
-					data: durations,
+					data: totalD,
 					fill: false,
 				},
 			],
@@ -118,7 +120,7 @@ function populateChart(data) {
 			datasets: [
 				{
 					label: "Pounds",
-					data: pounds,
+					data: totalW,
 					backgroundColor: [
 						"rgba(255, 99, 132, 0.2)",
 						"rgba(54, 162, 235, 0.2)",
@@ -174,7 +176,7 @@ function populateChart(data) {
 				{
 					label: "Excercises Performed",
 					backgroundColor: colors,
-					data: durations,
+					data: indivD,
 				},
 			],
 		},
@@ -194,7 +196,7 @@ function populateChart(data) {
 				{
 					label: "Excercises Performed",
 					backgroundColor: colors,
-					data: pounds,
+					data: indivW,
 				},
 			],
 		},
@@ -207,7 +209,7 @@ function populateChart(data) {
 	});
 }
 
-function duration(data) {
+function totalDuration(data) {
 	let durations = [];
 
 	data.forEach((workout) => {
@@ -216,6 +218,18 @@ function duration(data) {
 			totalDuration += exercise.duration;
 		});
 		durations.push(totalDuration);
+	});
+
+	return durations;
+}
+
+function individualDurations(data) {
+	let durations = [];
+
+	data.forEach((workout) => {
+		workout.exercises.forEach((exercise) => {
+			durations.push(exercise.duration);
+		});
 	});
 
 	return durations;
@@ -232,6 +246,18 @@ function calculateTotalWeight(data) {
 			}
 		});
 		total.push(totalWeight);
+	});
+
+	return total;
+}
+
+function calculateIndivWeight(data) {
+	let total = [];
+
+	data.forEach((workout) => {
+		workout.exercises.forEach((exercise) => {
+			total.push(exercise.weight);
+		});
 	});
 
 	return total;
