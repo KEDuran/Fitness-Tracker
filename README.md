@@ -101,4 +101,6 @@ After all required dependencies have been installed, run the command `npm run st
 
 ## Final Output
 
-Final output content to confirm functionality will be included in this section once the front-end and back-end are fully integrated.
+To demonstrate the functionality of the Workout Tracker App, here is a link to a demo recording I created to show the full functionality of the deployed app. Please note that the demo recording link provided below is also listed in the [Links for Submission Items](#links-for-submission-items) section located at the beginning of this ReadMe document.
+
+- Link for functionality demo - [Workout Tracker App demo recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
