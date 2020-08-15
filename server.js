@@ -62,6 +62,10 @@ app.put("/api/workouts/:id", (req, res) => {
 		});
 });
 
+// Route to create new workout
+app.post("/api/workouts/:id", (req, res) => {});
+
+// Listens for server port
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);
 });
