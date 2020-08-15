@@ -16,6 +16,12 @@
 
 ## Links for Submission Items
 
+Here are the links to the MVP items required for this assignment. Ihese links will also be submitted in the Boot Camp Spot portal.
+
+- Link to GitHub Repo - [https://github.com/KEDuran/Workout-Tracker](https://github.com/KEDuran/Workout-Tracker)
+
+- Link to deployed application - [https://workout-tracker-ked.herokuapp.com/](https://workout-tracker-ked.herokuapp.com/)
+
 ---
 
 ## Assignment Scope
