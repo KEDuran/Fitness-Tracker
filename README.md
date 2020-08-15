@@ -90,9 +90,10 @@ Here is a list of the dependencies used for the development of this application:
 - **Morgan** - Reference the provided link for more information regarding this package: [NPM Morgan Package](https://www.npmjs.com/package/morgan)
 
 ### Start Application
-After all required dependencies have been installed, run the command `npm run start` in you the terminal under the root directory in order to launch the application. The screenshot provided below is what should outplu of the application is launched successfully in your local environment. 
 
+After all required dependencies have been installed, run the command `npm run start` in you the terminal under the root directory in order to launch the application. The screenshot provided below is what should outplu of the application is launched successfully in your local environment.
 
+![Sample Terminal Screenshot]("./images/npmRunStart.png")
 
 ---
 
