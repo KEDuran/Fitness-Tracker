@@ -33,8 +33,10 @@ function generatePalette() {
 	return arr;
 }
 function populateChart(data) {
-	let durations = duration(data);
-	let pounds = calculateTotalWeight(data);
+	let totalD = totalDuration(data);
+	let indivD = individualDurations(data);
+	let totalW = calculateTotalWeight(data);
+	let indivW = calculateIndivWeight(data);
 	let workouts = workoutNames(data);
 	const colors = generatePalette();
 
@@ -55,33 +57,32 @@ function populateChart(data) {
 
 	let dataDates = [];
 
-	for (var i = 1; i <= 10; i++) {
-		let d = new Date();
-		d.setDate(new Date().getDate() - i);
-		dataDates.push(d);
+	if (totalD.length > 10) {
+		for (var i = 0; i < totalD.length; i++) {
+			let d = new Date();
+			d.setDate(new Date().getDate() - i);
+			dataDates.push(dayOfWeek[d.getDay()]);
+		}
+	} else {
+		for (var i = 1; i <= totalD.length; i++) {
+			let d = new Date();
+			d.setDate(new Date().getDate() - i);
+			dataDates.push(dayOfWeek[d.getDay()]);
+		}
 	}
+
+	dataDates.reverse();
 
 	let lineChart = new Chart(line, {
 		type: "line",
 		data: {
-			labels: [
-				dayOfWeek[dataDates[9].getDay()],
-				dayOfWeek[dataDates[8].getDay()],
-				dayOfWeek[dataDates[7].getDay()],
-				dayOfWeek[dataDates[6].getDay()],
-				dayOfWeek[dataDates[5].getDay()],
-				dayOfWeek[dataDates[4].getDay()],
-				dayOfWeek[dataDates[3].getDay()],
-				dayOfWeek[dataDates[2].getDay()],
-				dayOfWeek[dataDates[1].getDay()],
-				dayOfWeek[dataDates[0].getDay()],
-			],
+			labels: dataDates,
 			datasets: [
 				{
 					label: "Workout Duration In Minutes",
 					backgroundColor: "red",
 					borderColor: "red",
-					data: durations,
+					data: totalD,
 					fill: false,
 				},
 			],
@@ -115,22 +116,11 @@ function populateChart(data) {
 	let barChart = new Chart(bar, {
 		type: "bar",
 		data: {
-			labels: [
-				dayOfWeek[dataDates[9].getDay()],
-				dayOfWeek[dataDates[8].getDay()],
-				dayOfWeek[dataDates[7].getDay()],
-				dayOfWeek[dataDates[6].getDay()],
-				dayOfWeek[dataDates[5].getDay()],
-				dayOfWeek[dataDates[4].getDay()],
-				dayOfWeek[dataDates[3].getDay()],
-				dayOfWeek[dataDates[2].getDay()],
-				dayOfWeek[dataDates[1].getDay()],
-				dayOfWeek[dataDates[0].getDay()],
-			],
+			labels: dataDates,
 			datasets: [
 				{
 					label: "Pounds",
-					data: pounds,
+					data: totalW,
 					backgroundColor: [
 						"rgba(255, 99, 132, 0.2)",
 						"rgba(54, 162, 235, 0.2)",
@@ -142,6 +132,7 @@ function populateChart(data) {
 						"rgba(67, 170, 139, 0.2)",
 						"rgba(255, 144, 179, 0.2)",
 						"rgba(117, 117, 117, 0.2)",
+						"rgba(192, 133, 82, 0.2)",
 					],
 					borderColor: [
 						"rgba(255, 99, 132, 1)",
@@ -153,7 +144,8 @@ function populateChart(data) {
 						"rgba(39, 125, 161, 1)",
 						"rgba(67, 170, 139, 1)",
 						"rgba(255, 144, 179, 1)",
-						"rgba(117, 117, 117, 1",
+						"rgba(117, 117, 117, 1)",
+						"rgba(192, 133, 82, 1)",
 					],
 					borderWidth: 1,
 				},
@@ -184,7 +176,7 @@ function populateChart(data) {
 				{
 					label: "Excercises Performed",
 					backgroundColor: colors,
-					data: durations,
+					data: indivD,
 				},
 			],
 		},
@@ -204,7 +196,7 @@ function populateChart(data) {
 				{
 					label: "Excercises Performed",
 					backgroundColor: colors,
-					data: pounds,
+					data: indivW,
 				},
 			],
 		},
@@ -217,7 +209,7 @@ function populateChart(data) {
 	});
 }
 
-function duration(data) {
+function totalDuration(data) {
 	let durations = [];
 
 	data.forEach((workout) => {
@@ -231,15 +223,41 @@ function duration(data) {
 	return durations;
 }
 
+function individualDurations(data) {
+	let durations = [];
+
+	data.forEach((workout) => {
+		workout.exercises.forEach((exercise) => {
+			durations.push(exercise.duration);
+		});
+	});
+
+	return durations;
+}
+
 function calculateTotalWeight(data) {
 	let total = [];
 
 	data.forEach((workout) => {
 		let totalWeight = 0;
 		workout.exercises.forEach((exercise) => {
-			totalWeight += exercise.weight;
+			if (exercise.weight) {
+				totalWeight += exercise.weight;
+			}
 		});
 		total.push(totalWeight);
+	});
+
+	return total;
+}
+
+function calculateIndivWeight(data) {
+	let total = [];
+
+	data.forEach((workout) => {
+		workout.exercises.forEach((exercise) => {
+			total.push(exercise.weight);
+		});
 	});
 
 	return total;

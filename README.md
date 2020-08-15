@@ -10,7 +10,9 @@
 
 The goal for this assignment is to create a full stack workout tracker web application that will allow a user to keep track of their workout regime by using MongoDB and Mongoose schema for database creation/management and Express for handling routes.
 
-_Please note that since the main focus for this assignment is to practice using MongoDB and Mongoose for database management, all front-end code was provided by our instructor._
+The main focus for this assignment is to practice using MongoDB and Mongoose for database management, the front-end code was provided in the homework assignment's directory for us to leverage for this assignment.
+
+- _**Please Note** - In order for the dashboard to accurately (and dynamically) populate workout data, I had to make significant modifications to the front-end code that was provided for this assignment._
 
 ---
 
@@ -20,7 +22,12 @@ Please use the links in the table of contents provided below to navigate through
 
 - [Links for Submission Items](#links-for-submission-items)
 - [Assignment Scope](#assignment-scope)
+  - [User Story](#user-story)
+  - [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
+  - [Required Technology](#required-technology)
+  - [Installation Instructions](#installation-instructions)
+  - [Start Application](#start-application)
 - [Final Output](#final-output)
 
 ---
@@ -29,9 +36,11 @@ Please use the links in the table of contents provided below to navigate through
 
 Here are the links to the MVP items required for this assignment. Ihese links will also be submitted in the Boot Camp Spot portal.
 
-- Link to GitHub Repo - [https://github.com/KEDuran/Workout-Tracker](https://github.com/KEDuran/Workout-Tracker)
+- Link to GitHub Repo - [Workout Tracker Repo on GitHub](https://github.com/KEDuran/Workout-Tracker)
 
-- Link to deployed application - [https://workout-tracker-ked.herokuapp.com/](https://workout-tracker-ked.herokuapp.com/)
+- Link to deployed application - [Workout Tracker App deployed on Heroku](https://workout-tracker-ked.herokuapp.com/)
+
+- Link for functionality demo - [Workout Tracker App demo recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
 
 ---
 
@@ -89,8 +98,16 @@ Here is a list of the dependencies used for the development of this application:
 - **Mongoose** - Reference the provided link for more information regarding this package: [NPM Mongoose Package](https://www.npmjs.com/package/mongoose)
 - **Morgan** - Reference the provided link for more information regarding this package: [NPM Morgan Package](https://www.npmjs.com/package/morgan)
 
+### Start Application
+
+After all required dependencies have been installed, run the command `npm run start` in you the terminal under the root directory in order to launch the application. The screenshot provided below is what should outplu of the application is launched successfully in your local environment.
+
+![Sample Terminal Screenshot](./images/npmRunStart.png)
+
 ---
 
 ## Final Output
 
-Final output content to confirm functionality will be included in this section once the front-end and back-end are fully integrated.
+To demonstrate the functionality of the Workout Tracker App, here is a link to a demo recording I created to show the full functionality of the deployed app. Please note that the demo recording link provided below is also listed in the [Links for Submission Items](#links-for-submission-items) section located at the beginning of this ReadMe document.
+
+- Link for functionality demo - [Workout Tracker App demo recording](https://drive.google.com/file/d/1Mex2MzIYoetWCVNu5YDkb5Fm-yj8BNTB/view?usp=sharing)
