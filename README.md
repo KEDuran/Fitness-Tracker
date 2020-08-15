@@ -79,6 +79,14 @@ In order to success launch this web application, you will need to have the follo
 
 ### Installation Instructions
 
+All NPM packages needed for this application are already listed as dependencies in the `package.json` file. If running this web application in your local environment, please make sure to run the `npm install` command in your terminal at the root directory level in order to access all required package.
+
+Here is a list of the dependencies used for the development of this application:
+
+- **Express** - Reference the provided link for more information regarding this package: [NPM Express Package](https://www.npmjs.com/package/express)
+- **Mongoose** - Reference the provided link for more information regarding this package: [NPM Mongoose Package](https://www.npmjs.com/package/mongoose)
+- **Morgan** - Reference the provided link for more information regarding this package: [NPM Morgan Package](https://www.npmjs.com/package/morgan)
+
 ---
 
 ## Final Output
