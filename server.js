@@ -45,10 +45,11 @@ app.get("/api/workouts", (req, res) => {
 
 // Route to update workout data - referenced activity 14
 app.put("/api/workouts/:id", ({ body }, res) => {
-	db.Workout.create(body)
+	var workoutID = req.params.id;
+	db.Exercise.create(body)
 		.then(({ _id }) =>
 			db.Workout.findOneAndUpdate(
-				{},
+				{_id:workoutID},
 				{ $push: { exercises: _id } },
 				{ new: true }
 			)
