@@ -20,7 +20,12 @@ Please use the links in the table of contents provided below to navigate through
 
 - [Links for Submission Items](#links-for-submission-items)
 - [Assignment Scope](#assignment-scope)
+  - [User Story](#user-story)
+  - [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
+  - [Required Technology](#required-technology)
+  - [Installation Instructions](#installation-instructions)
+  - [Start Application](#start-application)
 - [Final Output](#final-output)
 
 ---
