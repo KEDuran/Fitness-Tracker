@@ -149,7 +149,7 @@ function exitProcess() {
 
 function createWorkout(index) {
 	db.Exercise.create(workoutSeed[index].exercises[0]).then(({ _id }) => {
-		console.log("index: " + index);
+		// console.log("index: " + index);
 		db.Workout.create({
 			day: workoutSeed[index].day,
 			exercises: [_id],
