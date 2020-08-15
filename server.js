@@ -63,7 +63,15 @@ app.put("/api/workouts/:id", (req, res) => {
 });
 
 // Route to create new workout
-app.post("/api/workouts/:id", (req, res) => {});
+app.post("/api/workouts", (req, res) => {
+	db.Workout.create(req.body)
+		.then((dbWorkout) => {
+			res.json(dbWorkout);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
 // Listens for server port
 app.listen(PORT, () => {
